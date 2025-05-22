@@ -1,0 +1,20 @@
+{
+    "manifest_version": 3,
+    "name": "Gmail Phishing Detector",
+    "version": "1.0",
+    "description": "Detects phishing links in Gmail emails.",
+    "permissions": ["activeTab", "scripting", "storage"],
+    "host_permissions": ["http://127.0.0.1:5000/*","https://mail.google.com/*", "https://smell-phishy.onrender.com/*"],
+    "background": {
+        "service_worker": "background.js"
+    },
+    "content_scripts": [{
+        "matches": ["https://mail.google.com/*"],
+        "js": ["content.js"],
+        "run_at": "document_idle"
+    }],
+    "action": {
+        "default_popup": "popup.html",
+        "default_icon": "icon.png"
+    }
+}

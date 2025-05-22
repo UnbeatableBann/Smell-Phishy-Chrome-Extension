@@ -1,0 +1,4 @@
+a[title='⚠️ Suspicious Link Detected'] {
+  border-bottom: 2px solid red;
+  font-weight: bold;
+}
